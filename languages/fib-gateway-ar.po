@@ -1,0 +1,202 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2023-04-13 10:48+0300\n"
+"PO-Revision-Date: 2023-04-13 10:49+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 3.2.2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: fib-gateway.php:112
+msgid "Sorry, you need to install Woocommerce plugin to use FIB Gateway"
+msgstr "عذراً، يجب عليك تنصيب اضافة  WooCommerce من اجل استخدام بوابة الدفع"
+
+#: includes/class-fib-gateway-woocommerce.php:67
+msgid "FIB Gateway"
+msgstr "FIB Gateway"
+
+#: includes/class-fib-gateway-woocommerce.php:68
+msgid "Have your customers pay with FIB (First Iraq Bank)."
+msgstr "اضف إمكانية الدفع لعملائك من خلال تطبيق مصرف العراق الاول."
+
+#: includes/class-fib-gateway-woocommerce.php:87
+msgid ""
+"FIB Gateway was disabled, You must set Client ID and Secret from  settings"
+msgstr ""
+"تم إيقاف إضافة مصرف العراق الاول, يجب عليك إضافة الـ Client ID & Secret "
+"لتفعيل الاضافة"
+
+#: includes/class-fib-gateway-woocommerce.php:106
+msgid "Enable"
+msgstr "تفعيل"
+
+#: includes/class-fib-gateway-woocommerce.php:107
+msgid "Enable FIB Gateway"
+msgstr "تفعيل الدفع من خلال FIB"
+
+#: includes/class-fib-gateway-woocommerce.php:112
+msgid "Title"
+msgstr "العنوان"
+
+#: includes/class-fib-gateway-woocommerce.php:113
+msgid "Payment Option Title"
+msgstr ""
+
+#: includes/class-fib-gateway-woocommerce.php:118
+msgid "Description"
+msgstr "الوصف"
+
+#: includes/class-fib-gateway-woocommerce.php:120
+msgid "This description is what user see when choose FIB gateway"
+msgstr "هذا الوصف يظهر للمستخدم عند تحديد مصرف العراق الاول لدفع الطلب"
+
+#: includes/class-fib-gateway-woocommerce.php:121
+msgid "Pay via FIB"
+msgstr "الدفع من خلال مصرف العراق الاول"
+
+#: includes/class-fib-gateway-woocommerce.php:124
+msgid "Client ID"
+msgstr ""
+
+#: includes/class-fib-gateway-woocommerce.php:128
+msgid "Client Secret"
+msgstr ""
+
+#: includes/class-fib-gateway-woocommerce.php:132
+msgid "Currency"
+msgstr "العملة"
+
+#: includes/class-fib-gateway-woocommerce.php:140
+msgid "Test Mode"
+msgstr ""
+
+#: includes/class-fib-gateway-woocommerce.php:141
+msgid "Enable Test Mode"
+msgstr ""
+
+#: includes/class-fib-gateway-woocommerce.php:156
+msgid "Dear Mr/Mrs."
+msgstr "عزيزي السيد\\السيدة."
+
+#: includes/class-fib-gateway-woocommerce.php:157
+msgid ""
+"An invoice has been created for your order, please pay the bill through Fib "
+"Application"
+msgstr ""
+"تم انشاء فاتورة خاصة بطلبك, يرجى تسديد الفاتورة من خلال تطبيق مصرف العراق "
+"الاول"
+
+#: includes/class-fib-gateway-woocommerce.php:161
+msgid "FIB Personal"
+msgstr ""
+
+#: includes/class-fib-gateway-woocommerce.php:162
+msgid "FIB Business"
+msgstr ""
+
+#: includes/class-fib-gateway-woocommerce.php:163
+msgid "Fib Corporate"
+msgstr ""
+
+#: includes/class-fib-gateway-woocommerce.php:184
+msgid "Error: Invalid phone number"
+msgstr "خطا: رقم الهاتف غير صحيح"
+
+#: includes/class-fib-gateway-woocommerce.php:204
+msgid "Awaiting bill payment"
+msgstr "في انتظار دفع الفاتورة"
+
+#: includes/class-fib-gateway-woocommerce.php:219
+msgid "Something Wrong, Please try again later."
+msgstr "حدث خطأ, حاول مجدداً في وقت لاحق."
+
+#: includes/libraries/plugin-update-checker-4.9/Puc/v4p9/Plugin/Ui.php:54
+msgid "View details"
+msgstr ""
+
+#: includes/libraries/plugin-update-checker-4.9/Puc/v4p9/Plugin/Ui.php:77
+#, php-format
+msgid "More information about %s"
+msgstr ""
+
+#: includes/libraries/plugin-update-checker-4.9/Puc/v4p9/Plugin/Ui.php:128
+msgid "Check for updates"
+msgstr ""
+
+#: includes/libraries/plugin-update-checker-4.9/Puc/v4p9/Plugin/Ui.php:223
+#, php-format
+msgid "Unknown update checker status \"%s\""
+msgstr ""
+
+#: includes/libraries/plugin-update-checker-4.9/Puc/v4p9/Vcs/PluginUpdateChecker.php:98
+msgid "There is no changelog available."
+msgstr ""
+
+#~ msgid "success"
+#~ msgstr "نجاح"
+
+#~ msgid "failed"
+#~ msgstr "فشل"
+
+#~ msgid "create order"
+#~ msgstr "انشاء طلب"
+
+#~ msgid "order payment"
+#~ msgstr "دفع الطلب"
+
+#~ msgid "Order Id"
+#~ msgstr "رقم الطلب"
+
+#~ msgid "Operation"
+#~ msgstr "العملية"
+
+#~ msgid "Status"
+#~ msgstr "الحالة"
+
+#~ msgid "Card Holder"
+#~ msgstr "اسم حامل البطاقة"
+
+#~ msgid "Card Number"
+#~ msgstr "رقم البطاقة"
+
+#~ msgid "Amount"
+#~ msgstr "المبلغ"
+
+#~ msgid "Create Date"
+#~ msgstr "تاريخ الانشاء"
+
+#~ msgid "Total Orders"
+#~ msgstr "عدد الفواتير الكلي"
+
+#~ msgid "Total Unpaid Orders"
+#~ msgstr "عدد الفواتير الغير مدفوعه"
+
+#~ msgid "Total Paid Orders Amount"
+#~ msgstr "المبلغ الكلي للفواتير المدفوعة"
+
+#~ msgid "sorry, we couldn't find the order"
+#~ msgstr "عذراً, لم نتمكن من إيجاد الطلب"
+
+#~ msgid "Order Status has been set to paid"
+#~ msgstr "تم دفع الفاتورة بنجاح"
+
+#~ msgid "Payment Failed"
+#~ msgstr "فشلت عملية الدفع"
+
+#~ msgid "An error occurred while processing the payment"
+#~ msgstr "حدث خطأ، يرجى التواصل مع ادارة الموقع من اجل التحقق من عملية الدفع"
+
+#~ msgid "Sorry, we couldn't find the order"
+#~ msgstr "عذراً, لم نتمكن من إيجاد الطلب"
+
+#~ msgid "Pay Bill"
+#~ msgstr "دفع الفاتورة"
