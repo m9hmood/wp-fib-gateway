@@ -1,4 +1,4 @@
-=== FIB: UnOffical Advance Plugin ===
+=== FIB: UnOfficial Plugin ===
 
 This plugin allows you to add Fib as payment gateway for your woocommerce store
 with easy installation
