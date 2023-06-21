@@ -13,7 +13,7 @@
  * @package           Fib_Gateway
  *
  * @wordpress-plugin
- * Plugin Name:       FIB Gateway: UnOfficial Gateway Plugin
+ * Plugin Name:       FIB Gateway: UnOfficial Gateway Integration
  * Plugin URI:        https://fib.mahmoodshaki.com/
  * Description:       Add FIB as payment method for Wordpress easily.
  * Version:           1.3.1
