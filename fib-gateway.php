@@ -16,7 +16,7 @@
  * Plugin Name:       FIB Gateway: UnOfficial Gateway Integration
  * Plugin URI:        https://fib.mahmoodshaki.com/
  * Description:       Add FIB as payment method for Wordpress easily.
- * Version:           1.3.1
+ * Version:           1.3.2
  * Author:            Mahmood A.Shakir
  * Author URI:        https://mahmoodshaki.com/
  * License:           GPL-2.0+
@@ -34,7 +34,7 @@ if (!defined('WPINC')) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define('FIB_GATEWAY_VERSION', '1.3.1');
+define('FIB_GATEWAY_VERSION', '1.3.2');
 
 
 /**
