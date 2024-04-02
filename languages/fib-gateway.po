@@ -91,7 +91,7 @@ msgid "FIB Business"
 msgstr ""
 
 #: includes/class-fib-gateway-woocommerce.php:150
-msgid "Fib Corporate"
+msgid "FIB Corporate"
 msgstr ""
 
 #: includes/class-fib-gateway-woocommerce.php:171

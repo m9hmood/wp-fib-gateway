@@ -1,0 +1,21 @@
+.fib-gateway-container {
+    margin-bottom: 20px;
+}
+
+.fib-gateway-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.fib-gateway-container img {
+    margin: 10px 0;
+}
+
+.fib-gateway-buttons a {
+    background: linear-gradient(180deg, #53b79e, #41b09e);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #f9f9f9;
+}

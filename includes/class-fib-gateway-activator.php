@@ -17,7 +17,7 @@ class Fib_Gateway_Activator
 {
 
     /**
-     * Initialize the plugin table on plugin activation 
+     * Initialize the plugin table on plugin activation
      *
      * @since    1.0.0
      */

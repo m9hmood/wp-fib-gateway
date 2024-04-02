@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Define the internationalization functionality.
  *

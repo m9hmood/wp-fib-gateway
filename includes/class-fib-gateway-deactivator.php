@@ -1,15 +1,4 @@
 <?php
-
-/**
- * Fired during plugin deactivation
- *
- * @link       https://mahmoodshakir.com/
- * @since      1.0.0
- *
- * @package    Fib_Gateway
- * @subpackage Fib_Gateway/includes
- */
-
 /**
  * Fired during plugin deactivation.
  *

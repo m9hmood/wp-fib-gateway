@@ -16,7 +16,7 @@
  * Plugin Name:       FIB Gateway: UnOfficial Gateway Integration
  * Plugin URI:        https://fib.mahmoodshaki.com/
  * Description:       Add FIB as payment method for Wordpress easily.
- * Version:           1.3.2
+ * Version:           1.4.0
  * Author:            Mahmood A.Shakir
  * Author URI:        https://mahmoodshaki.com/
  * License:           GPL-2.0+
@@ -34,7 +34,7 @@ if (!defined('WPINC')) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define('FIB_GATEWAY_VERSION', '1.3.2');
+define('FIB_GATEWAY_VERSION', '1.4.0');
 
 
 /**
@@ -118,18 +118,25 @@ function run_fib_gateway()
 
 add_filter('plugins_loaded', 'run_fib_gateway');
 
-function woocommerce_fib_blocks_support() {
-    if ( class_exists( '\Automattic\WooCommerce\Blocks\Payments\Integrations\AbstractPaymentMethodType' ) ) {
+/**
+ * Enable payment gateway block feature for WooCommerce
+ *
+ * @since 1.4.0
+ */
+function woocommerce_fib_blocks_support()
+{
+    if (class_exists('\Automattic\WooCommerce\Blocks\Payments\Integrations\AbstractPaymentMethodType')) {
         // here we're including our "gateway block support class"
         require_once __DIR__ . '/includes/class-fib-gateway-woocommerce-blocks.php';
 
         // registering the PHP class we have just included
         add_action(
             'woocommerce_blocks_payment_method_type_registration',
-            function( \Automattic\WooCommerce\Blocks\Payments\PaymentMethodRegistry $payment_method_registry ) {
-                $payment_method_registry->register( new WC_Fib_Gateway_Blocks_Support );
+            function (\Automattic\WooCommerce\Blocks\Payments\PaymentMethodRegistry $payment_method_registry) {
+                $payment_method_registry->register(new WC_Fib_Gateway_Blocks_Support);
             }
         );
     }
 }
-add_action( 'woocommerce_blocks_loaded', 'woocommerce_fib_blocks_support' );
+
+add_action('woocommerce_blocks_loaded', 'woocommerce_fib_blocks_support');

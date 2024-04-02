@@ -68,6 +68,7 @@ class Fib_Gateway
         $this->set_filters();
         $this->set_callback();
         $this->add_woocommerce_gateway();
+        $this->load_styles();
     }
 
     /**
@@ -209,6 +210,18 @@ class Fib_Gateway
     public function get_version()
     {
         return $this->version;
+    }
+
+    /**
+     * Load css styles for the plugin
+     *
+     * @since     1.4.0
+     */
+    public function load_styles()
+    {
+        add_action('wp_enqueue_scripts', function () {
+            wp_enqueue_style('woocommerce_fib_css', untrailingslashit( plugins_url( '/', __DIR__ ) ) . '/assets/styles/fib.css');
+        });
     }
 
 

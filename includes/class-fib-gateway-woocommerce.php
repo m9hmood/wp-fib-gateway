@@ -90,7 +90,7 @@ class Fib_Gateway_WC extends WC_Payment_Gateway
         }
 
         add_action('woocommerce_update_options_payment_gateways_' . $this->id, array($this, 'process_admin_options'));
-        add_filter('woocommerce_thankyou_order_received_text', array($this, 'order_received_text'), 10, 2);
+        add_filter('woocommerce_before_thankyou', array($this, 'order_received_text'), 5);
 
     }
 
@@ -150,20 +150,22 @@ class Fib_Gateway_WC extends WC_Payment_Gateway
      *
      * @since    1.0.0
      */
-    public function order_received_text($text, $order)
+    public function order_received_text($order_id)
     {
+        $order = wc_get_order($order_id);
         if ($order->get_payment_method() === 'fib-gateway') {
+            echo '<div class="fib-gateway-container">';
             echo __('Dear Mr/Mrs.', 'fib-gateway') . PHP_EOL . $order->get_billing_first_name() . '<br />';
             echo __('An invoice has been created for your order, please pay the bill through Fib Application', 'fib-gateway') . '<br />';
-            echo '<img src="'.$order->get_meta('_fib_order_qr_code').'">';
+            echo '<img src="' . get_post_meta($order_id, '_fib_order_qr_code', true) . '">';
             echo $order->get_meta('_fib_or  der_id');
-            echo '<div>';
-            echo '<a href="' . $order->get_meta('_fib_personal_app_link') . '" class="button wc-fib-button">' . __('FIB Personal', 'fib-gateway') . '</a>';
-            echo '<a href="' . $order->get_meta('_fib_business_app_link') . '" class="button wc-fib-button">' . __('FIB Business', 'fib-gateway') . '</a>';
-            echo '<a href="' . $order->get_meta('_fib_corporate_app_link') . '" class="button wc-fib-button">' . __('Fib Corporate', 'fib-gateway') . '</a>';
+            echo '<div class="fib-gateway-buttons">';
+            echo '<a href="' . get_post_meta($order_id, '_fib_personal_app_link', true) . '" class="button wc-fib-button">' . __('FIB Personal', 'fib-gateway') . '</a>';
+            echo '<a href="' . get_post_meta($order_id, '_fib_business_app_link', true) . '" class="button wc-fib-button">' . __('FIB Business', 'fib-gateway') . '</a>';
+            echo '<a href="' . get_post_meta($order_id, '_fib_corporate_app_link', true) . '" class="button wc-fib-button">' . __('FIB Corporate', 'fib-gateway') . '</a>';
             echo '</div>';
-        } else {
-            echo $text;
+            echo '</div>';
+
         }
     }
 
@@ -197,6 +199,7 @@ class Fib_Gateway_WC extends WC_Payment_Gateway
             case 201:
                 // update order status to pending
                 $order->update_status('pending', __('Awaiting bill payment', 'fib-gateway'));
+
                 // store fib meta data
                 add_post_meta($order->get_id(), "_fib_order_id", $response['paymentId']);
                 add_post_meta($order->get_id(), "_fib_order_qr_code", $response['qrCode']);

@@ -1,4 +1,5 @@
 <?php
+
 /**
  *
  * Define the payment gateway filters for woocommerce;

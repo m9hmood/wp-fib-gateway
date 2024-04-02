@@ -49,7 +49,7 @@ class Fib_Gateway_Helper
     {
         $payment_gateways = WC_Payment_Gateways::instance()->payment_gateways()['fib-gateway'];
         $base_url = $payment_gateways->settings['is_test'] === 'yes' ? FIB_API_DOMAIN_TEST : FIB_API_DOMAIN;
-        $url = $base_url.'/auth/realms/fib-online-shop/protocol/openid-connect/token';
+        $url = $base_url . '/auth/realms/fib-online-shop/protocol/openid-connect/token';
         $data = array(
             'grant_type' => 'client_credentials',
             'client_id' => $client_id,
@@ -66,7 +66,7 @@ class Fib_Gateway_Helper
 
         if (is_wp_error($response)) {
             // handle error
-             return array('error' => true, 'message' => 'Something went wrong!', 'access_token' => null);;
+            return array('error' => true, 'message' => 'Something went wrong!', 'access_token' => null);;
         } else {
             $body = json_decode(wp_remote_retrieve_body($response), true);
             // handle response
@@ -86,7 +86,7 @@ class Fib_Gateway_Helper
      */
     static function jwt_decode(string $token): array
     {
-        return json_decode(base64_decode(str_replace('_', '/', str_replace('-','+',explode('.', $token)[1]))), true);
+        return json_decode(base64_decode(str_replace('_', '/', str_replace('-', '+', explode('.', $token)[1]))), true);
     }
 
     /**
@@ -95,11 +95,13 @@ class Fib_Gateway_Helper
      * @return bool
      * @since 1.0.0
      */
-    static function is_token_expired(string $token): bool {
+    static function is_token_expired(string $token): bool
+    {
         $payload = Fib_Gateway_Helper::jwt_decode($token);
         $date = new \DateTime();
         return $date->getTimestamp() < $payload['exp'];
     }
+
     /**
      * show error message in admin panel
      *

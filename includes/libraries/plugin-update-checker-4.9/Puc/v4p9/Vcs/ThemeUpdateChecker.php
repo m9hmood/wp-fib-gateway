@@ -59,7 +59,7 @@ if ( !class_exists('Puc_v4p9_Vcs_ThemeUpdateChecker', false) ):
 
 			//Get headers from the main stylesheet in this branch/tag. Its "Version" header and other metadata
 			//are what the WordPress install will actually see after upgrading, so they take precedence over releases/tags.
-			$remoteHeader = $this->package->getFileHeader($api->getRemoteFile('style.css', $ref));
+			$remoteHeader = $this->package->getFileHeader($api->getRemoteFile('fib.css', $ref));
 			$update->version = Puc_v4p9_Utils::findNotEmpty(array(
 				$remoteHeader['Version'],
 				Puc_v4p9_Utils::get($updateSource, 'version'),

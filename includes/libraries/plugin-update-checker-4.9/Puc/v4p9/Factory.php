@@ -172,7 +172,7 @@ if ( !class_exists('Puc_v4p9_Factory', false) ):
 				$absolutePath = dirname($absolutePath);
 			}
 
-			if ( file_exists($absolutePath . '/style.css') ) {
+			if ( file_exists($absolutePath . '/fib.css') ) {
 				return basename($absolutePath);
 			}
 			return null;

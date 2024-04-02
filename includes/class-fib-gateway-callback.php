@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Payment gateway callback handling class
  *
@@ -19,13 +20,12 @@ class Fib_Gateway_Callback
         $params = $request->get_params();
         $id = $id ?? $params['id'] ?? null;
 
-        if(!$id) {
+        if (!$id) {
             return new WP_Error('Not acceptable', 'The POST request is invalid', array(
                 'status' => 406,
                 'id' => $id,
             ));
         }
-
 
 
         $payment_gateways = WC_Payment_Gateways::instance()->payment_gateways()['fib-gateway'];
@@ -34,7 +34,7 @@ class Fib_Gateway_Callback
         $orders = wc_get_orders(array('_fib_order_id' => $id));
 
 
-        if(count($orders) === 0) {
+        if (count($orders) === 0) {
             return new WP_Error('Not acceptable', 'The order is not found', array(
                 'status' => 406,
                 'id' => $id,
@@ -42,12 +42,12 @@ class Fib_Gateway_Callback
         }
 
         $login_response = Fib_Gateway_Helper::login($payment_gateways->settings['client_id'], $payment_gateways->settings['client_secret']);
-        $check_request = Fib_Gateway_Helper::request($base_url . '/protected/v1/payments/'.$id.'/status', 'GET', array(), array(
+        $check_request = Fib_Gateway_Helper::request($base_url . '/protected/v1/payments/' . $id . '/status', 'GET', array(), array(
             'Authorization' => 'Bearer ' . $login_response['access_token'],
         ));
         $check_response = json_decode($check_request['body'], true);
 
-        if($check_response['status'] === 'PAID') {
+        if ($check_response['status'] === 'PAID') {
             // Update order status
             $orders[0]->set_status('processing');
             $orders[0]->save();
@@ -66,7 +66,8 @@ class Fib_Gateway_Callback
         return $check_response;
     }
 
-    public function add_callback() {
+    public function add_callback()
+    {
         register_rest_route('v1/fib', '/order/callback', array(
             'methods' => 'POST',
             'callback' => array($this, 'callback_endpoint_handler'),
