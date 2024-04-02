@@ -1,7 +1,7 @@
 const _wp_fib_gateway_settings = window.wc.wcSettings.getSetting( 'fib-gateway_data', {} );
-const _wp_fib_gateway_label = window.wp.htmlEntities.decodeEntities( settings.title ) || window.wp.i18n.__('FIB Gateway', 'fib-gateway');
+const _wp_fib_gateway_label = window.wp.htmlEntities.decodeEntities( _wp_fib_gateway_settings.title ) || window.wp.i18n.__('FIB Gateway', 'fib-gateway');
 const WpFibContent = () => {
-    return window.wp.htmlEntities.decodeEntities( settings.description || '' );
+    return window.wp.htmlEntities.decodeEntities( _wp_fib_gateway_settings.description || '' );
 };
 const WP_FIB_Block_Gateway = {
     name: 'fib-gateway',
