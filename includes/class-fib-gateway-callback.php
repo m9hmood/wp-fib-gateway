@@ -70,6 +70,7 @@ class Fib_Gateway_Callback
         register_rest_route('v1/fib', '/order/callback', array(
             'methods' => 'POST',
             'callback' => array($this, 'callback_endpoint_handler'),
+            'permission_callback' => '__return_true',
             'args' => [
             ],
         ));

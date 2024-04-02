@@ -117,3 +117,19 @@ function run_fib_gateway()
 }
 
 add_filter('plugins_loaded', 'run_fib_gateway');
+
+function woocommerce_fib_blocks_support() {
+    if ( class_exists( '\Automattic\WooCommerce\Blocks\Payments\Integrations\AbstractPaymentMethodType' ) ) {
+        // here we're including our "gateway block support class"
+        require_once __DIR__ . '/includes/class-fib-gateway-woocommerce-blocks.php';
+
+        // registering the PHP class we have just included
+        add_action(
+            'woocommerce_blocks_payment_method_type_registration',
+            function( \Automattic\WooCommerce\Blocks\Payments\PaymentMethodRegistry $payment_method_registry ) {
+                $payment_method_registry->register( new WC_Fib_Gateway_Blocks_Support );
+            }
+        );
+    }
+}
+add_action( 'woocommerce_blocks_loaded', 'woocommerce_fib_blocks_support' );
