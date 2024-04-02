@@ -228,6 +228,7 @@ class Fib_Gateway_WC extends WC_Payment_Gateway
     {
         $amount = $order->get_total() + 0;
         $base_url = $this->isTest ? TESTING_FIB_API_DOMAIN : FIB_API_DOMAIN;
+
         // request body for creating new bill for fib
         $login_response = Fib_Gateway_Helper::login($this->client_id, $this->client_secret);
 

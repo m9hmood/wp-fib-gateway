@@ -48,7 +48,7 @@ class Fib_Gateway_Helper
     static function login(string $client_id, string $client_secret): array
     {
         $payment_gateways = WC_Payment_Gateways::instance()->payment_gateways()['fib-gateway'];
-        $base_url = $payment_gateways->settings['is_test'] === 'yes' ? FIB_API_DOMAIN_TEST : FIB_API_DOMAIN;
+        $base_url = $payment_gateways->settings['is_test'] === 'yes' ? TESTING_FIB_API_DOMAIN : FIB_API_DOMAIN;
         $url = $base_url . '/auth/realms/fib-online-shop/protocol/openid-connect/token';
         $data = array(
             'grant_type' => 'client_credentials',

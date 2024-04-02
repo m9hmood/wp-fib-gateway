@@ -29,7 +29,7 @@ class Fib_Gateway_Callback
 
 
         $payment_gateways = WC_Payment_Gateways::instance()->payment_gateways()['fib-gateway'];
-        $base_url = $payment_gateways->settings['is_test'] === 'yes' ? FIB_API_DOMAIN_TEST : FIB_API_DOMAIN;
+        $base_url = $payment_gateways->settings['is_test'] === 'yes' ? TESTING_FIB_API_DOMAIN : FIB_API_DOMAIN;
         // Get the desired WC_Payment_Gateway object
         $orders = wc_get_orders(array('_fib_order_id' => $id));
 
