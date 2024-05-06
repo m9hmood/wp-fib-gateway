@@ -237,7 +237,7 @@ class Fib_Gateway_WC extends WC_Payment_Gateway
                 'amount' => $amount,
                 'currency' => $this->currency,
             ),
-            'statusCallbackUrl' => get_site_url(),
+            'statusCallbackUrl' => rest_url('v1/fib/order/callback'),
         );
         // add Authorization to request header
         $headers = array(
